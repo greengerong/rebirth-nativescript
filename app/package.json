@@ -1,0 +1,46 @@
+{
+  "private": false,
+  "nativescript": {
+    "id": "com.github.greengerong.rebirth.nativescript"
+  },
+  "name": "rebirth-nativescript",
+  "main": "main.js",
+  "version": "2.4.1",
+  "author": "grzx2210@163.com",
+  "description": "Rebirth blog for greengerong",
+  "license": "BSD",
+  "keywords": [
+    "blog",
+    "mobile",
+    "angular",
+    "nativescript",
+    "tns"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/greengerong/rebirth-ns"
+  },
+  "homepage": "https://github.com/greengerong/rebirth-ns",
+  "android": {
+    "v8Flags": "--expose_gc"
+  },
+  "dependencies": {
+    "nativescript-theme-core": "^0.2.1",
+    "nativescript-angular": "1.1.3",
+    "@angular/core": "2.1.2",
+    "@angular/common": "2.1.2",
+    "@angular/compiler": "2.1.2",
+    "@angular/http": "2.1.2",
+    "@angular/platform-browser": "2.1.2",
+    "@angular/platform-browser-dynamic": "2.1.2",
+    "@angular/forms": "2.1.2",
+    "@angular/router": "3.1.2",
+    "rxjs": "5.0.0-beta.12",
+    "reflect-metadata": "~0.1.8"
+  },
+  "devDependencies": {
+    "zone.js": "~0.6.21",
+    "nativescript-dev-typescript": "^0.3.2",
+    "nativescript-dev-android-snapshot": "^0.*.*"
+  }
+}

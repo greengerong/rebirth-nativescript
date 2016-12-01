@@ -1,6 +1,5 @@
 import { NgModule } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/platform";
-
 import { AppComponent } from "./app.component";
 
 @NgModule({
@@ -8,5 +7,6 @@ import { AppComponent } from "./app.component";
     bootstrap: [AppComponent],
     imports: [NativeScriptModule]
 })
-export class AppModule { }
+export class AppModule {
+}
 

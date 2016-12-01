@@ -1,5 +1,11 @@
-<StackLayout class="p-20">
-    <Label text="Tap the button" class="h1 text-center"></Label>
-    <Button text="TAP" (tap)="onTap()" class="btn btn-primary btn-active"></Button>
-    <Label [text]="message" class="h2 text-center" textWrap="true"></Label>
-</StackLayout>
+<ListView class="list-group" [items]="countries" (itemTap)="onItemTapFirstList($event)" separatorColor="white">
+    <template let-country="item">
+        <GridLayout rows="* auto" columns="*" class="list-group-item active" style="border: 1px;">
+            <Image row="0" col="0" [src]="country.imageSrc"></Image>
+            <StackLayout row="1" col="0" backgroundColor="white" class="list-group-item">
+                <Label class="list-group-item-heading" [text]="country.name"></Label>
+                <Label class="list-group-item-text" [text]="'Continent: '+country.continent"></Label>
+            </StackLayout>
+        </GridLayout>
+    </template>
+</ListView>

@@ -1,7 +1,7 @@
 {
-  "description": "NativeScript Application",
-  "license": "SEE LICENSE IN <your-license-filename>",
-  "readme": "NativeScript Application",
+  "description": "Rebirth NativeScript blog(破狼)",
+  "license": "MIT",
+  "readme": "Rebirth NativeScript blog(破狼)",
   "repository": "<fill-your-repository-here>",
   "scripts": {
     "dev:ios": "tns livesync ios --emulator --watch",

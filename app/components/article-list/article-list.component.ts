@@ -1,6 +1,6 @@
 import { Component, ElementRef } from "@angular/core";
-import { ObservableArray } from 'data/observable-array';
 import { SetupItemViewArgs } from 'nativescript-angular';
+import { ObservableArray } from 'data/observable-array';
 
 class Item {
     constructor(public name: string) {
@@ -15,10 +15,10 @@ let items = ["ALL Heroes (header)", "Razor", "Rubick", "Phantom Lancer", "Legion
 
 
 @Component({
-    selector: "my-app",
-    templateUrl: "app.component.html",
+    selector: "article-list",
+    templateUrl: "components/article-list/article-list.component.html",
 })
-export class AppComponent {
+export class ArticleListComponent {
     public dataItems: Array<Item>;
     public countries: ObservableArray<any>;
 
@@ -36,5 +36,4 @@ export class AppComponent {
         args.view.context.header = ((args.index + 1) % items.length === 1);
         args.view.context.footer = (args.index + 1 === items.length);
     }
-
 }

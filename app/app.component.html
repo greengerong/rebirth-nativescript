@@ -3,13 +3,7 @@
 </ActionBar>
 <TabView>
     <StackLayout *tabItem="{title: '文章', iconSource: '~/icon.png'}" >
-        <ListView [items]="dataItems" (setupItemView)="onSetupItemView($event)" class="list-group">
-            <template let-dataitem="item" let-i="index" let-third="third" let-header="header" let-footer="footer">
-                <GridLayout [class.third]="third" [class.header]="header" [class.footer]="footer" class="list-group-item">
-                    <Label [text]="dataitem.name" android:class="label-item"></Label>
-                </GridLayout>
-            </template>
-        </ListView>
+        <article-list></article-list>
     </StackLayout>
     <StackLayout *tabItem="{title: '关于我'}">
         <ListView class="list-group" [items]="countries" (itemTap)="onItemTapFirstList($event)" separatorColor="white">

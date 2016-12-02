@@ -6,3 +6,7 @@ app/**/*.*.js
 app/**/*.js
 app/**/*.js.map
 app/**/*.`*.js.map
+.DS_Store
+lib/.DS_Store
+lib/iOS/.DS_Store
+npm-debug.log

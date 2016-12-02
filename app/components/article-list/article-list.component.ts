@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 @Component({
     selector: "article-list",
     templateUrl: "components/article-list/article-list.component.html",
+    styleUrls: ['components/article-list/article-list.component.css']
 })
 export class ArticleListComponent implements OnInit {
     pageIndex = 1;
@@ -34,17 +35,20 @@ export class ArticleListComponent implements OnInit {
     }
 
     pageChange(pageIndex, done?: () => void) {
+        console.log("==============1==============");
         this.articleService.getArticles(pageIndex, environment.article.pageSize)
             .subscribe(result => {
                     if (!this.article) {
                         this.article = result;
+                        console.log("============3================");
+                        done && done();
                         return;
                     }
 
                     this.article.pageIndex = result.pageIndex;
                     this.article.total = result.total;
                     this.article.result.push(...result.result);
-
+                    console.log("============2================");
                     done && done();
                 },
                 (e) => {

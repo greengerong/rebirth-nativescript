@@ -1,0 +1,9 @@
+.article-author-image{
+    width: 40px;
+}
+
+.list-group-item{
+    padding: 0px;
+    margin: 10px;
+    border: 1px solid #00fdd6;
+}

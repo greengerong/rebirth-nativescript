@@ -1,7 +1,18 @@
 <ListView [items]="article?.result" class="list-group">
-    <template let-dataitem="item" let-$index="index">
-        <GridLayout class="list-group-item">
-            <Label [text]="$index + ':' + dataitem.title" android:class="label-item"></Label>
+    <template let-articelItem="item" let-$index="index">
+        <GridLayout rows="* auto" columns="*" class="article-card active">
+            <StackLayout row="0" col="0" class="list-group-item" orientation="horizontal">
+                <Image src="~/assets/img/wolf2.png" class="article-author-image"></Image>
+                <Label class="list-group-item-heading" textWrap="true" [text]="articelItem.title"></Label>
+            </StackLayout>
+            <StackLayout row="1" col="0" class="list-group-item" orientation="horizontal">
+                <Label class="article-overview" textWrap="true" [text]="articelItem.overview"></Label>
+            </StackLayout>
+            <StackLayout row="2" col="0" class="list-group-item" orientation="horizontal">
+                <Label class="article-meta" class="pull-left" [text]="articelItem.author"></Label>
+                <Label class="article-meta" class="text-center" [text]="articelItem.author"></Label>
+                <Label class="article-meta" class="pull-right" [text]="articelItem.author"></Label>
+            </StackLayout>
         </GridLayout>
     </template>
 </ListView>

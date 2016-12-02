@@ -44,7 +44,8 @@ export class ArticleService {
                 let result = res.result || [];
                 return <SearchResult<Article>>{
                     result: result.map(item => {
-                        item.overview = item.overview || item.markdown.substr(0, 100);
+                        item.author = item.author || '破狼';
+                        item.overview = item.overview || item.markdown.substr(0, 100) + '...';
                         item.image = item.image || (item.html.match(/src="?'?([^> <"']+)"?'?/) || [])[1];
 
                         return item;

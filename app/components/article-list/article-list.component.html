@@ -1,18 +1,26 @@
-<ListView [items]="article?.result" class="list-group">
-    <template let-articelItem="item" let-$index="index">
-        <GridLayout rows="* auto" columns="*" class="article-card active">
-            <StackLayout row="0" col="0" class="list-group-item" orientation="horizontal">
-                <Image src="~/assets/img/wolf2.png" class="article-author-image"></Image>
-                <Label class="list-group-item-heading" textWrap="true" [text]="articelItem.title"></Label>
-            </StackLayout>
-            <StackLayout row="1" col="0" class="list-group-item" orientation="horizontal">
-                <Label class="article-overview" textWrap="true" [text]="articelItem.overview"></Label>
-            </StackLayout>
-            <StackLayout row="2" col="0" class="list-group-item" orientation="horizontal">
-                <Label class="article-meta" class="pull-left" [text]="articelItem.author"></Label>
-                <Label class="article-meta" class="text-center" [text]="articelItem.author"></Label>
-                <Label class="article-meta" class="pull-right" [text]="articelItem.author"></Label>
-            </StackLayout>
-        </GridLayout>
-    </template>
-</ListView>
+<GridLayout rows="*">
+    <ScrollView>
+        <StackLayout horizontalAlignment="center">
+            <CardView radius="5" class="innerCardStyle" width="40%"
+                      *ngFor="let articleItem of article?.result; let $index = index;">
+                <StackLayout horizontalAlignment="center" orientation="horizontal">
+                    <Image src="~/assets/img/wolf2.png" class="article-author-image"></Image>
+                    <Label class="list-group-item-heading" textWrap="true" [text]="articleItem.title"></Label>
+                </StackLayout>
+                <StackLayout class="list-group-item" orientation="horizontal">
+                    <Label class="article-overview" textWrap="true" [text]="articleItem.overview"></Label>
+                </StackLayout>
+                <StackLayout class="list-group-item" orientation="horizontal">
+                    <GridLayout rows="auto" columns="* auto *">
+                        <Label class="article-meta" row="0" col="0" class="pull-left"
+                               [text]="articleItem.author"></Label>
+                        <Label class="article-meta" row="0" col="1" class="text-center"
+                               [text]=" '第' + ($index + 1) + '篇/共' + article?.total +'篇'"></Label>
+                        <Label class="article-meta" row="0" col="2" class="pull-right"
+                               text="阅读原文"></Label>
+                    </GridLayout>
+                </StackLayout>
+            </CardView>
+        </StackLayout>
+    </ScrollView>
+</GridLayout>

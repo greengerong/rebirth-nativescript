@@ -10,3 +10,5 @@ app/**/*.`*.js.map
 lib/.DS_Store
 lib/iOS/.DS_Store
 npm-debug.log
+app/**/*.css
+app/**/*.*.css

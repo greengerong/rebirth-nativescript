@@ -1,13 +1,13 @@
 export class Article {
-  layout: string;
-  title: string;
-  author: string;
-  date: Date;
-  comments: boolean;
-  categories: string[];
-  url: string;
-  html: string;
-  markdown: string;
-  overview?: string;
-  image?: string;
+    layout: string;
+    title: string;
+    author: string;
+    date: Date;
+    comments: boolean;
+    categories: string[];
+    url: string;
+    html: string;
+    markdown: string;
+    overview: string;
+    image: string;
 }

@@ -1,6 +1,11 @@
 import { Component, ElementRef, OnInit, Output, EventEmitter } from "@angular/core";
 import { ArticleService, Article, SearchResult } from '../../core';
 import { environment } from '../../environments/environment';
+import { registerElement, ViewClass } from "nativescript-angular/element-registry";
+import { PullToRefresh } from "nativescript-pulltorefresh";
+
+
+registerElement("PullToRefresh", () => require("nativescript-pulltorefresh").PullToRefresh);
 
 @Component({
     selector: "article-list",
@@ -34,13 +39,26 @@ export class ArticleListComponent implements OnInit {
         this.pageChange(this.pageIndex, () => 1);
     }
 
+    refresh(refresher) {
+        let pullRefresh = refresher.object;
+        this.pageIndex = 1;
+        this.articleService.cacheEvict();
+        this.articleService.getArticles(this.pageIndex, environment.article.pageSize)
+            .subscribe(result => {
+                    this.article = result;
+                    pullRefresh.refreshing = false;
+                },
+                (e) => {
+                    console.log(e, 'ArticleListComponent error');
+                    pullRefresh.refreshing = false;
+                });
+    }
+
     pageChange(pageIndex, done?: () => void) {
-        console.log("==============1==============");
         this.articleService.getArticles(pageIndex, environment.article.pageSize)
             .subscribe(result => {
                     if (!this.article) {
                         this.article = result;
-                        console.log("============3================");
                         done && done();
                         return;
                     }
@@ -48,7 +66,6 @@ export class ArticleListComponent implements OnInit {
                     this.article.pageIndex = result.pageIndex;
                     this.article.total = result.total;
                     this.article.result.push(...result.result);
-                    console.log("============2================");
                     done && done();
                 },
                 (e) => {

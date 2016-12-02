@@ -65,6 +65,7 @@ export class ArticleService {
 
     private  innerGetAllArticles(): Observable<SearchResult<Article>> {
         let promise: Promise<SearchResult<Article>> = getJSON(environment.api.article);
+        console.log(`loading data from ${environment.api.article}`);
         return fromPromise(promise);
     }
 

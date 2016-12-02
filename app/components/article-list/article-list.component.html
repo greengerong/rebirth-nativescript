@@ -7,16 +7,16 @@
                         <Image src="~/assets/img/wolf2.png" class="article-author-image"></Image>
                         <Label class="article-title primary-link" textWrap="true" [text]="articleItem.title"></Label>
                     </StackLayout>
-                    <StackLayout class="list-group-item" orientation="horizontal">
-                        <Label class="article-overview" textWrap="true" [text]="articleItem.overview"></Label>
+                    <StackLayout class="list-group-item article-overview" orientation="horizontal">
+                        <Label textWrap="true" [text]="articleItem.overview"></Label>
                     </StackLayout>
                     <StackLayout class="list-group-item" orientation="horizontal">
-                        <GridLayout rows="auto" columns="* auto *">
-                            <Label class="article-meta primary-link" row="0" col="0" class="pull-left"
+                        <GridLayout rows="auto" columns="* auto *" class="article-meta">
+                            <Label class="primary-link" row="0" col="0" class="pull-left"
                                    [text]="articleItem.author"></Label>
-                            <Label class="article-meta primary-link" row="0" col="1" class="text-center"
-                                   [text]=" '第' + ($index + 1) + '篇/共' + article?.total +'篇'"></Label>
-                            <Label class="article-meta primary-link" row="0" col="2" class="pull-right"
+                            <Label class="primary-link" row="0" col="1" class="text-center"
+                                   [text]="'第' + ($index + 1) + '篇/共' + article?.total +'篇'"></Label>
+                            <Label class="primary-link" row="0" col="2" class="pull-right"
                                    text="阅读原文"></Label>
                         </GridLayout>
                     </StackLayout>

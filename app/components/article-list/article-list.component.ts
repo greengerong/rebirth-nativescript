@@ -1,6 +1,8 @@
 import { Component, ElementRef } from "@angular/core";
 import { SetupItemViewArgs } from 'nativescript-angular';
 import { ObservableArray } from 'data/observable-array';
+import { ArticleService } from '../../core/article-service/article.service';
+import { environment } from '../../environments/environment';
 
 class Item {
     constructor(public name: string) {
@@ -20,11 +22,15 @@ let items = ["ALL Heroes (header)", "Razor", "Rubick", "Phantom Lancer", "Legion
 })
 export class ArticleListComponent {
     public dataItems: Array<Item>;
-    public countries: ObservableArray<any>;
+    public pageIndex = 1;
 
-    constructor(public elementRef: ElementRef) {
-        this.countries = new ObservableArray([{ name: 'rebirth', continent: '-------' }])
+    constructor(public elementRef: ElementRef, private articleService: ArticleService) {
         this.dataItems = [];
+        this.articleService.getArticles(this.pageIndex, environment.article.pageSize)
+            .subscribe(
+                t=> console.log(JSON.stringify(t), "========="),
+                error=> console.log(error, "====error=====")
+            );
 
         for (let i = 0; i < items.length; i++) {
             this.dataItems.push(new Item(items[i]));

@@ -10,7 +10,7 @@
                                          horizontalAlignment="center">
                                 <Image src="~/assets/img/wolf2.png" class="article-author-image"></Image>
                                 <Label class="article-title primary-link" textWrap="true"
-                                       [text]="articleItem.title"></Label>
+                                       [text]="articleItem.title" (tap)="gotoPage(articleItem.url)"></Label>
                             </StackLayout>
                             <StackLayout *ngIf="articleItem.image" class="list-group-item" orientation="horizontal"
                                          horizontalAlignment="center">
@@ -26,7 +26,7 @@
                                     <Label class="primary-link" row="0" col="1" class="text-center"
                                            [text]="'第' + ($index + 1) + '篇/共' + article?.total +'篇'"></Label>
                                     <Label class="primary-link" row="0" col="2" class="pull-right"
-                                           text="阅读原文"></Label>
+                                           text="阅读原文" (tap)="gotoPage(articleItem.url)"></Label>
                                 </GridLayout>
                             </StackLayout>
                         </StackLayout>

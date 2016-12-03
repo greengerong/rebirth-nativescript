@@ -3,14 +3,19 @@ import { NativeScriptModule } from "nativescript-angular/platform";
 import { AppComponent } from "./app.component";
 import { ComponentsModule } from "./components";
 import { CoreModule } from "./core";
+import { NativeScriptRouterModule } from 'nativescript-angular';
+import { appRoutes } from './app.route';
+import { BlogModule } from './blog/blog.module';
 
 @NgModule({
     declarations: [AppComponent],
     bootstrap: [AppComponent],
     imports: [
         NativeScriptModule,
+        NativeScriptRouterModule,
+        NativeScriptRouterModule.forRoot(appRoutes),
         CoreModule,
-        ComponentsModule
+        BlogModule
     ]
 })
 export class AppModule {

@@ -1,0 +1,14 @@
+<ActionBar title="文章">
+
+</ActionBar>
+<TabView>
+    <StackLayout *tabItem="{title: '文章', iconSource: '~/icon.png'}">
+        <article-list></article-list>
+    </StackLayout>
+    <StackLayout *tabItem="{title: '关于我'}">
+        <Label class="list-group-item-text" text="关于我-----"></Label>
+    </StackLayout>
+    <StackLayout *tabItem="{title: '联系我们'}">
+        <HtmlView [html]="htmlString"></HtmlView>
+    </StackLayout>
+</TabView>

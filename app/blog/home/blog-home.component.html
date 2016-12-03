@@ -6,9 +6,9 @@
         <article-list></article-list>
     </StackLayout>
     <StackLayout *tabItem="{title: '关于我'}">
-        <Label class="list-group-item-text" text="关于我-----"></Label>
+        <HtmlView [html]="htmlString"></HtmlView>
     </StackLayout>
     <StackLayout *tabItem="{title: '联系我们'}">
-        <HtmlView [html]="htmlString"></HtmlView>
+
     </StackLayout>
 </TabView>

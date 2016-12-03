@@ -4,10 +4,10 @@ import { SetupItemViewArgs } from 'nativescript-angular';
 
 
 @Component({
-    selector: "blog",
-    templateUrl: "blog/blog.component.html",
+    selector: "blog-home",
+    templateUrl: "blog/home/blog-home.component.html",
 })
-export class BlogComponent {
+export class BlogHomeComponent {
     public htmlString: string;
 
     constructor(public elementRef: ElementRef) {

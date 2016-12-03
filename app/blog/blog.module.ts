@@ -1,12 +1,12 @@
 import { NgModule } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/platform";
 import { ComponentsModule } from "../components";
-import { BlogComponent } from './blog.component';
+import { BlogHomeComponent } from './home';
 import { appRoutes } from './blog.route';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-    declarations: [BlogComponent],
+    declarations: [BlogHomeComponent],
     imports: [
         NativeScriptModule,
         RouterModule.forChild(appRoutes),

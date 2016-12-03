@@ -1,5 +1,6 @@
-import { BlogComponent } from './blog.component';
+import { BlogHomeComponent } from './home';
 
 export const appRoutes = [
-    { path: "blog", component: BlogComponent }
+    { path: "blog", component: BlogHomeComponent }
 ];
+

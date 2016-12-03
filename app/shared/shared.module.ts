@@ -8,7 +8,7 @@ import { NativeScriptModule } from "nativescript-angular/platform";
     declarations: [ArticleListComponent],
     exports: [ArticleListComponent]
 })
-export class ComponentsModule {
+export class SharedModule {
 
 }
 

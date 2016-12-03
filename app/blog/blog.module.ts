@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/platform";
-import { ComponentsModule } from "../components";
+import { SharedModule } from "../shared";
 import { BlogHomeComponent } from './home';
 import { appRoutes } from './blog.route';
 import { RouterModule } from '@angular/router';
@@ -10,7 +10,7 @@ import { RouterModule } from '@angular/router';
     imports: [
         NativeScriptModule,
         RouterModule.forChild(appRoutes),
-        ComponentsModule
+        SharedModule
     ]
 })
 export class BlogModule {

@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/platform";
 import { AppComponent } from "./app.component";
-import { ComponentsModule } from "./components";
 import { CoreModule } from "./core";
 import { NativeScriptRouterModule } from 'nativescript-angular';
 import { appRoutes } from './app.route';

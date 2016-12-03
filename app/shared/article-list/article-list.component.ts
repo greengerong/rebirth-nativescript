@@ -9,8 +9,8 @@ registerElement("PullToRefresh", () => require("nativescript-pulltorefresh").Pul
 
 @Component({
     selector: "article-list",
-    templateUrl: "components/article-list/article-list.component.html",
-    styleUrls: ['components/article-list/article-list.component.css']
+    templateUrl: "shared/article-list/article-list.component.html",
+    styleUrls: ['shared/article-list/article-list.component.css']
 })
 export class ArticleListComponent implements OnInit {
     pageIndex = 1;

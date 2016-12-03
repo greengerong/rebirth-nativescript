@@ -31,7 +31,6 @@ export class ArticleListComponent implements OnInit {
     }
 
     gotoPage(url) {
-        console .log(url, "================");
         this.articleClicked.emit(url);
     }
 

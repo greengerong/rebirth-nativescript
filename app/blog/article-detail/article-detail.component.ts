@@ -3,8 +3,8 @@ import { Article, ArticleService } from '../../core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-    selector: "blog-home",
-    templateUrl: "blog/home/blog-home.component.html",
+    selector: "article-detail",
+    templateUrl: "blog/article-detail/article-detail.component.html",
 })
 export class ArticleDetailComponent implements OnInit {
     article: Article;

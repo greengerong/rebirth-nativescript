@@ -16,7 +16,10 @@ export class AboutMeComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log("AboutMeComponent AboutMeComponent AboutMeComponent=========");
         this.aboutService.getArticle()
-            .subscribe(article => this.article = article);
+            .subscribe(article => {
+                this.article = article;
+            });
     }
 }

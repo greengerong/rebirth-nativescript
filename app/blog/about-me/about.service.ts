@@ -8,11 +8,9 @@ import * as fs from "file-system";
 export class AboutService {
 
     getArticle(): Observable<Article> {
-        console.log(__dirname + "/polang.html");
         return fromPromise(fs.File.fromPath(__dirname + "/polang.html")
             .readText()
             .then(function (html) {
-                console.log(html);
                 const article = new Article();
                 article.title = '破狼简介';
                 article.categories = ['破狼', '简介'];

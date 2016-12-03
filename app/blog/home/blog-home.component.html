@@ -1,9 +1,8 @@
 <ActionBar title="文章">
-
 </ActionBar>
 <TabView>
     <StackLayout *tabItem="{title: '文章', iconSource: '~/icon.png'}">
-        <article-list></article-list>
+        <article-list (articleClicked)="gotoPage($event)"></article-list>
     </StackLayout>
     <StackLayout *tabItem="{title: '关于我'}">
         <about-me></about-me>

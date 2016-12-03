@@ -1,5 +1,7 @@
-<ScrollView>
-    <StackLayout class="about-me" orientation="horizontal">
-        <HtmlView [html]="article?.html"></HtmlView>
-    </StackLayout>
-</ScrollView>
+<StackLayout>
+    <ScrollView>
+        <StackLayout class="article-item" orientation="horizontal">
+            <HtmlView [html]="article?.html"></HtmlView>
+        </StackLayout>
+    </ScrollView>
+</StackLayout>

@@ -1,13 +1,13 @@
-<ActionBar title="文章">
+<ActionBar [title]="currentTab.title">
 </ActionBar>
-<TabView>
-    <StackLayout *tabItem="{title: '文章', iconSource: '~/icon.png'}">
+<TabView (selectedIndexChanged)="onSelectedIndexChanged($event)">
+    <StackLayout *tabItem="tabs[0]">
         <article-list (articleClicked)="gotoPage($event)"></article-list>
     </StackLayout>
-    <StackLayout *tabItem="{title: '关于我'}">
+    <StackLayout *tabItem="tabs[1]">
         <about-me></about-me>
     </StackLayout>
-    <StackLayout *tabItem="{title: '联系我们'}">
+    <StackLayout *tabItem="tabs[2]">
 
     </StackLayout>
 </TabView>

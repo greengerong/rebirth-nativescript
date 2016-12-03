@@ -12,6 +12,10 @@
                                 <Label class="article-title primary-link" textWrap="true"
                                        [text]="articleItem.title"></Label>
                             </StackLayout>
+                            <StackLayout *ngIf="articleItem.image" class="list-group-item" orientation="horizontal"
+                                         horizontalAlignment="center">
+                                <Image [src]="articleItem.image" class="article-overview-image"></Image>
+                            </StackLayout>
                             <StackLayout class="list-group-item article-overview" orientation="horizontal">
                                 <Label textWrap="true" [text]="articleItem.overview"></Label>
                             </StackLayout>

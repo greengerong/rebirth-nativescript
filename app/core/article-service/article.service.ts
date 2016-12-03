@@ -46,7 +46,7 @@ export class ArticleService {
                     result: result.map(item => {
                         item.author = item.author || '破狼';
                         item.overview = item.overview || item.markdown.substr(0, 100) + '...';
-                        item.image = item.image || (item.html.match(/src="?'?([^> <"']+)"?'?/) || [])[1];
+                            item.image = item.image || (item.html.match(/src="?'?([^> <"']+)"?'?/) || [])[1];
 
                         return item;
                     })

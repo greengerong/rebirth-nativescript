@@ -34,7 +34,7 @@ export class ArticleListComponent implements OnInit {
         this.articleClicked.emit(url);
     }
 
-    loadMore() {
+    loadMore($event) {
         this.pageIndex += 1;
         this.pageChange(this.pageIndex, () => 1);
     }

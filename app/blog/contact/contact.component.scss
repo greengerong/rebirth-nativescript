@@ -7,3 +7,33 @@
 .contact-desc, .contact-form {
   padding: 10px;
 }
+
+Label {
+  margin-right: 8px;
+}
+
+TextField, TextView {
+  background-color: transparent;
+  font-size: 15px;
+  border-width: 1px;
+  border-color: #D4D3D7;
+  border-radius: 8px;
+  padding: 2px;
+  height: 40px;
+  width: 100%;
+}
+
+Button, TextField {
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-bottom: 10px;
+}
+
+.submit-button {
+  background-color: #51C9A8;
+  color: white;
+  height: 40px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px;
+}

@@ -11,8 +11,12 @@ import { SelectedIndexChangedEventData } from 'ui/tab-view';
     styleUrls: ["blog/contact/contact.component.css"]
 })
 export class ContactComponent {
+    model: any = {};
 
     constructor() {
     }
 
+    submit() {
+        console.log("submit", JSON.stringify(this.model));
+    }
 }

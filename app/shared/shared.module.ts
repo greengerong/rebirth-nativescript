@@ -1,16 +1,26 @@
 import { ArticleListComponent } from  './article-list'
 
 import { NgModule } from "@angular/core";
-import { NativeScriptModule } from "nativescript-angular/platform";
 import { ArticleItemComponent } from './article-item';
+import { NativeScriptModule, NativeScriptFormsModule, NativeScriptRouterModule } from 'nativescript-angular';
 
 @NgModule({
-    imports: [NativeScriptModule],
+    imports: [
+        NativeScriptModule,
+        NativeScriptFormsModule,
+        NativeScriptRouterModule,
+    ],
     declarations: [
         ArticleListComponent,
         ArticleItemComponent
     ],
-    exports: [ArticleListComponent]
+    exports: [
+        NativeScriptModule,
+        NativeScriptRouterModule,
+        NativeScriptFormsModule,
+        ArticleListComponent,
+        NativeScriptFormsModule,
+    ]
 })
 export class SharedModule {
 

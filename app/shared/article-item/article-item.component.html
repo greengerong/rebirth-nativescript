@@ -1,6 +1,6 @@
-<GridLayout rows="auto, *" columns="80, *">
-    <Label row="0" col="0" class="article-title primary-link" textWrap="true" text="articleItem.title"></Label>
-    <ScrollView row="1" col="0">
-        <!--<HtmlView [html]="article?.html"></HtmlView>-->
-    </ScrollView>
-</GridLayout>
+<ScrollView>
+    <GridLayout rows="auto, *" columns="80, *">
+        <Label row="0" col="0" class="article-title primary-link" textWrap="true" [text]="articleItem?.title"></Label>
+        <HtmlView [html]="article?.html"></HtmlView>
+    </GridLayout>
+</ScrollView>

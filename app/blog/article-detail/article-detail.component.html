@@ -1,7 +1,8 @@
 <ActionBar [title]="article?.title">
 </ActionBar>
 <ScrollView>
-    <StackLayout class="article-item" orientation="horizontal">
-        <HtmlView [html]="article?.html"></HtmlView>
-    </StackLayout>
+    <GridLayout rows="auto, *" columns="80, *">
+        <Label row="0" col="0" class="article-title primary-link" textWrap="true" text="articleItem.title"></Label>
+        <HtmlView row="1" col="" 0 [html]="article?.html"></HtmlView>
+    </GridLayout>
 </ScrollView>

@@ -1,5 +1,6 @@
-<ScrollView>
-    <StackLayout class="article-item" orientation="horizontal">
-        <HtmlView [html]="article?.html"></HtmlView>
-    </StackLayout>
-</ScrollView>
+<GridLayout rows="auto, *" columns="80, *">
+    <Label row="0" col="0" class="article-title primary-link" textWrap="true" text="articleItem.title"></Label>
+    <ScrollView row="1" col="0">
+        <!--<HtmlView [html]="article?.html"></HtmlView>-->
+    </ScrollView>
+</GridLayout>

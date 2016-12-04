@@ -1,7 +1,7 @@
 <StackLayout>
     <ScrollView>
         <StackLayout class="article-item" orientation="horizontal">
-            <HtmlView [html]="article?.html"></HtmlView>
+            <HtmlView #articleView [html]="article?.html"></HtmlView>
         </StackLayout>
     </ScrollView>
 </StackLayout>

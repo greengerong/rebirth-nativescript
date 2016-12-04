@@ -1,4 +1,4 @@
-rebirth-ns
+rebirth-nativescript
 ==========
 
 ## Links
@@ -11,11 +11,11 @@ rebirth-ns
 ##Screen Shoots
 
 ### home page
-![](./shortscreens/home.png)
+![](./screenshoots/home.png)
 
 ### about me
-![](./shortscreens/about-me.png)
+![](./screenshoots/about-me.png)
 
 ### article detail
-![](./shortscreens/article-detail.png)
+![](./screenshoots/article-detail.png)
 

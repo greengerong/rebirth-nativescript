@@ -1,6 +1,6 @@
-<ActionBar [title]="currentTab.title">
+<ActionBar [title]="currentTab.title" backgroundColor="#4acaa8" color="#fff">
 </ActionBar>
-<TabView (selectedIndexChanged)="onSelectedIndexChanged($event)">
+<TabView (selectedIndexChanged)="onSelectedIndexChanged($event)" selectedColor="#fff" tabsBackgroundColor="#4acaa8">
     <StackLayout *tabItem="tabs[0]">
         <article-list (articleClicked)="gotoPage($event)"></article-list>
     </StackLayout>

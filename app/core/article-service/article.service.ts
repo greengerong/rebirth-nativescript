@@ -7,10 +7,25 @@ import { environment } from '../../environments/environment';
 import { fromPromise } from 'rxjs/observable/fromPromise';
 import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/map';
+import * as fs from "file-system";
 
 @Injectable()
 export class ArticleService {
     articles: SearchResult<Article>;
+    articleCss: string;
+
+    getArticleCss(): Observable<string> {
+        if (this.articleCss) {
+            return of(this.articleCss);
+        }
+
+        return <Observable<string>>fromPromise(fs.File.fromPath(__dirname + "/article-item.css")
+            .readText())
+            .map(css => {
+                this.articleCss = css;
+                return css;
+            });
+    }
 
     getArticles(pageIndex = 1, pageSize = 5): Observable<SearchResult<Article>> {
         return this.getAllArticles()
@@ -46,7 +61,7 @@ export class ArticleService {
                     result: result.map(item => {
                         item.author = item.author || '破狼';
                         item.overview = item.overview || item.markdown.substr(0, 100) + '...';
-                            item.image = item.image || (item.html.match(/src="?'?([^> <"']+)"?'?/) || [])[1];
+                        item.image = item.image || (item.html.match(/src="?'?([^> <"']+)"?'?/) || [])[1];
 
                         return item;
                     })

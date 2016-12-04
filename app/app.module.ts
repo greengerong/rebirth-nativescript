@@ -11,8 +11,8 @@ import { SharedModule } from './shared/shared.module';
     bootstrap: [AppComponent],
     imports: [
         SharedModule,
-        NativeScriptRouterModule.forRoot(appRoutes),
         CoreModule,
+        NativeScriptRouterModule.forRoot(appRoutes),
         BlogModule
     ]
 })

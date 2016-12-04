@@ -36,4 +36,8 @@ Button, TextField {
   border-radius: 8px;
   width: 100%;
   margin-top: 20px;
+
+  &.is-disable {
+    opacity: 0.4;
+  }
 }

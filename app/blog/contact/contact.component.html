@@ -18,7 +18,8 @@
             <TextView verticalAlignment="center" horizontalAlignment="center"
                       class="input input-border" row="2" col="1" width="100%" height="80"
                       [(ngModel)]="model.issue"></TextView>
-            <Button (tap)="submit()" row="3" col="0" colSpan="2" class="submit-button" text="提交"></Button>
+            <Button (tap)="submit()" row="3" col="0" colSpan="2" class="submit-button" text="提交"
+                    [ngClass]="{'is-disable': true}" [isEnabled]="false"></Button>
         </GridLayout>
     </StackLayout>
 </ScrollView>

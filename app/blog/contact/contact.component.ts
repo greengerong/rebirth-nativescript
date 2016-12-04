@@ -1,9 +1,5 @@
 import { Component, ElementRef } from "@angular/core";
-import { ObservableArray } from 'data/observable-array';
-import { SetupItemViewArgs } from 'nativescript-angular';
-import { Router } from '@angular/router';
-import { SelectedIndexChangedEventData } from 'ui/tab-view';
-
+import * as dialogs from "ui/dialogs";
 
 @Component({
     selector: "contact",
@@ -18,5 +14,12 @@ export class ContactComponent {
 
     submit() {
         console.log("submit", JSON.stringify(this.model));
+        dialogs.alert({
+            title: `${this.model.user}同学:`,
+            message: "谢谢你的反馈,我们已经收到,并将会尽快处理。",
+            okButtonText: "好的"
+        });
+
+        this.model = {};
     }
 }

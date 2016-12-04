@@ -1,0 +1,23 @@
+<StackLayout>
+    <StackLayout orientation="horizontal" class="contact-desc">
+        <Label class="desc-paragraph" textWrap="true"
+               text="Rebirth nativescript 博客项目是一个开源学习项目,希望大家能从这里学到你想要的东西。感谢大家长期以来的支持和鼓励。不管你有什么问题都可以在github项目 rebirth-question的issue中提出。博主在空闲时候将会为大家解答。同时也欢迎其他同学帮助解答。"></Label>
+    </StackLayout>
+    <StackLayout orientation="horizontal" class="contact-desc">
+        <Label class="desc-paragraph" textWrap="true"
+               text="如果你有问题，请移步到github项目https://github.com/greengerong/rebirth-question/issues。"></Label>
+    </StackLayout>
+    <GridLayout rows="* * * *" columns="auto, *" class="form contact-form">
+        <Label text="称呼:" row="0" col="0"></Label>
+        <TextField class="input input-field input-border input-rounded" row="0" col="1"
+                   automationText="textField"></TextField>
+        <Label text="邮件" row="1" col="0"></Label>
+        <TextField class="input input-field input-border input-rounded" row="1" col="1"></TextField>
+        <Label text="问题" row="2" col="0"></Label>
+        <TextView verticalAlignment="center" horizontalAlignment="center"
+                  class="input input-field input-border input-rounded"
+                  row="2" col="1"
+                  width="300" height="300"></TextView>
+        <Button (tap)="submit()" row="3" col="0" colSpan="2" text="提交"></Button>
+    </GridLayout>
+</StackLayout>

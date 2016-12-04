@@ -6,12 +6,14 @@ import { RouterModule } from '@angular/router';
 import { BlogHomeComponent } from './home';
 import { AboutMeComponent } from './about-me';
 import { ArticleDetailComponent } from './article-detail';
+import { ContactComponent } from './contact';
 
 @NgModule({
     declarations: [
         BlogHomeComponent,
         AboutMeComponent,
-        ArticleDetailComponent
+        ArticleDetailComponent,
+        ContactComponent
     ],
     imports: [
         NativeScriptModule,

@@ -51,6 +51,7 @@ export class ArticleService {
 
     getAllArticles(): Observable<SearchResult<Article>> {
         if (this.articles) {
+            console.log("Get article form cache pool!");
             return of(this.articles);
         }
 
@@ -67,8 +68,9 @@ export class ArticleService {
                     })
                 };
             })
-            .map(function (item) {
+            .map((item) => {
                 this.articles = item;
+                console.log(JSON.stringify(this.articles), " item to articles");
                 return item;
             });
     }

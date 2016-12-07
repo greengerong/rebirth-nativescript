@@ -57,12 +57,7 @@ export class ArticleListComponent implements OnInit {
     pageChange(pageIndex, done?: () => void) {
         this.articleService.getArticles(pageIndex, environment.article.pageSize)
             .subscribe(result => {
-                    if (!this.article) {
-                        this.article = result;
-                        done && done();
-                        return;
-                    }
-
+                    this.article = this.article || <SearchResult<Article>>{ result: [] };
                     this.article.pageIndex = result.pageIndex;
                     this.article.total = result.total;
                     this.article.result.push(...result.result);

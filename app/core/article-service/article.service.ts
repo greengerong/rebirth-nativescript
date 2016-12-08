@@ -70,7 +70,6 @@ export class ArticleService {
             })
             .map((item) => {
                 this.articles = item;
-                console.log(JSON.stringify(this.articles), " item to articles");
                 return item;
             });
     }

@@ -1,7 +1,12 @@
 <GridLayout rows="*">
     <PullToRefresh (refresh)="refresh($event)">
         <ScrollView>
-            <ListView [items]="article?.result" class="article-card-list"
+            <ActivityIndicator
+                    [busy]="!article?.result"
+                    horizontalAlignment="center"
+                    verticalAlignment="center">
+            </ActivityIndicator>
+            <ListView [items]="article?.result" class="article-card-list" *ngIf="article?.result"
                       (loadMoreItems)="loadMore($event)">
                 <template let-articleItem="item" let-$index="index">
                     <CardView>
@@ -21,11 +26,11 @@
                             </StackLayout>
                             <StackLayout class="list-group-item" orientation="horizontal">
                                 <GridLayout rows="auto" columns="* auto *" class="article-meta">
-                                    <Label class="primary-link" row="0" col="0" class="pull-left"
+                                    <Label class="primary-link pull-left" row="0" col="0"
                                            [text]="articleItem.author"></Label>
-                                    <Label class="primary-link" row="0" col="1" class="text-center"
+                                    <Label class="primary-link text-center" row="0" col="1"
                                            [text]="'第' + ($index + 1) + '篇/共' + article?.total +'篇'"></Label>
-                                    <Label class="primary-link" row="0" col="2" class="pull-right"
+                                    <Label class="primary-link pull-right" row="0" col="2"
                                            text="阅读原文" (tap)="gotoPage(articleItem.url)"></Label>
                                 </GridLayout>
                             </StackLayout>

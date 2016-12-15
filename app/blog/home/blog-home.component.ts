@@ -1,9 +1,7 @@
-import { Component, ElementRef } from "@angular/core";
-import { ObservableArray } from 'data/observable-array';
-import { SetupItemViewArgs } from 'nativescript-angular';
-import { Router } from '@angular/router';
+import { Component } from "@angular/core";
+import { RouterExtensions } from 'nativescript-angular';
 import { SelectedIndexChangedEventData } from 'ui/tab-view';
-
+import * as application from "application";
 
 @Component({
     selector: "blog-home",
@@ -13,13 +11,20 @@ export class BlogHomeComponent {
     tabs = [{ title: '文章', iconSource: '' }, { title: '关于我' }, { title: '联系我们' }];
     currentTab: any;
 
-    constructor(private router: Router) {
+    constructor(private routerExtensions: RouterExtensions) {
         this.currentTab = this.tabs[0];
     }
 
     gotoPage(url) {
-        console.log("router", url)
-        this.router.navigate([`/blog/${url}`]);
+        console.log("routerExtensions", url)
+        let transitionName = application.ios ? "curl" : 'flipRight';
+        this.routerExtensions.navigate([`/blog/${url}`], {
+            transition: {
+                name: transitionName,
+                duration: 600,
+                curve: "linear"
+            }
+        });
     }
 
     onSelectedIndexChanged(args: SelectedIndexChangedEventData) {

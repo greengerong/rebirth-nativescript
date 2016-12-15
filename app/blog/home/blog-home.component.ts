@@ -21,7 +21,7 @@ export class BlogHomeComponent {
         this.routerExtensions.navigate([`/blog/${url}`], {
             transition: {
                 name: transitionName,
-                duration: 600,
+                duration: 3000,
                 curve: "linear"
             }
         });

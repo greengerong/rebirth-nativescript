@@ -23,5 +23,5 @@ rebirth-nativescript
 ![](./screenshoots/contact-us.png)
 
 ### route animation
-![animation](./cul-ios-animation.png)
+![animation](./screenshoots/cul-ios-animation.png)
 

@@ -17,13 +17,18 @@ export class ArticleListComponent implements OnInit {
     article: SearchResult<Article>;
     @Output()
     articleClicked = new EventEmitter();
+    @Output()
+    loadCompleted = new EventEmitter();
 
     constructor(public elementRef: ElementRef, private articleService: ArticleService) {
 
     }
 
     ngOnInit() {
-        this.pageChange(this.pageIndex);
+        this.pageChange(this.pageIndex, (error, data) => {
+            this.loadCompleted.emit({ error, data });
+            this.loadCompleted.complete();
+        });
     }
 
     ngOnDestroy(): void {
@@ -54,18 +59,18 @@ export class ArticleListComponent implements OnInit {
                 });
     }
 
-    pageChange(pageIndex, done?: () => void) {
+    pageChange(pageIndex, done?: (error: any, data?: any) => void) {
         this.articleService.getArticles(pageIndex, environment.article.pageSize)
             .subscribe(result => {
                     this.article = this.article || <SearchResult<Article>>{ result: [] };
                     this.article.pageIndex = result.pageIndex;
                     this.article.total = result.total;
                     this.article.result.push(...result.result);
-                    done && done();
+                    done && done(null, result);
                 },
                 (e) => {
                     console.log(e, 'ArticleListComponent error');
-                    done && done();
+                    done && done(e);
                 });
     }
 }

@@ -19,7 +19,6 @@ import { NativeScriptModule, NativeScriptFormsModule, NativeScriptRouterModule }
         NativeScriptRouterModule,
         NativeScriptFormsModule,
         ArticleListComponent,
-        NativeScriptFormsModule,
     ]
 })
 export class SharedModule {

@@ -1,5 +1,4 @@
-import { Component, ElementRef } from "@angular/core";
-import { ObservableArray } from 'data/observable-array';
+import { Component } from "@angular/core";
 
 
 @Component({
@@ -8,7 +7,7 @@ import { ObservableArray } from 'data/observable-array';
 })
 export class AppComponent {
 
-    constructor(public elementRef: ElementRef) {
+    constructor() {
 
     }
 

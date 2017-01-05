@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Article, ArticleService } from '../../core';
 import { AboutService } from './about.service';
 
@@ -8,7 +8,7 @@ import { AboutService } from './about.service';
     viewProviders: [AboutService]
 })
 export class AboutMeComponent implements OnInit {
-    article: Article;
+    article = <Article>{ html: "" };
 
     constructor(private  aboutService: AboutService, private articleService: ArticleService) {
 

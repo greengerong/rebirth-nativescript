@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { Article, ArticleService } from '../../core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
     templateUrl: "blog/article-detail/article-detail.component.html",
 })
 export class ArticleDetailComponent implements OnInit {
-    article: Article;
+    article = <Article> { html: "" };
 
     constructor(private articleService: ArticleService, private activatedRoute: ActivatedRoute) {
 

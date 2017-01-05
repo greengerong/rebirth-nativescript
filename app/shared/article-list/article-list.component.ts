@@ -54,7 +54,7 @@ export class ArticleListComponent implements OnInit {
                     pullRefresh.refreshing = false;
                 },
                 (e) => {
-                    console.log(e, 'ArticleListComponent error');
+                    console.log('ArticleListComponent error');
                     pullRefresh.refreshing = false;
                 });
     }
@@ -69,7 +69,7 @@ export class ArticleListComponent implements OnInit {
                     done && done(null, result);
                 },
                 (e) => {
-                    console.log(e, 'ArticleListComponent error');
+                    console.log('ArticleListComponent error');
                     done && done(e);
                 });
     }

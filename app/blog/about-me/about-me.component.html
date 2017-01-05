@@ -1,7 +1,5 @@
-<StackLayout>
-    <ScrollView>
-        <StackLayout class="article-item" orientation="horizontal">
-            <WebView #articleView [src]="article?.html"></WebView>
-        </StackLayout>
+<GridLayout rows="*">
+    <ScrollView row="0">
+        <WebView #articleView [src]="article?.html"></WebView>
     </ScrollView>
-</StackLayout>
+</GridLayout>

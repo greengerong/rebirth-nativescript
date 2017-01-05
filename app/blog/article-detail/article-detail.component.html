@@ -1,10 +1,8 @@
 <ActionBar [title]="article?.title" backgroundColor="#4acaa8" color="#fff">
 </ActionBar>
 
-<StackLayout>
-    <ScrollView>
-        <StackLayout orientation="horizontal">
-            <WebView #articleView class="article-detail" [src]="article?.html"></WebView>
-        </StackLayout>
+<GridLayout rows="*">
+    <ScrollView row="0">
+        <WebView class="article-detail" #articleView [src]="article?.html"></WebView>
     </ScrollView>
-</StackLayout>
+</GridLayout>

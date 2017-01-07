@@ -11,9 +11,9 @@
         <GridLayout rows="* * auto *" columns="auto, *" class="form contact-form">
             <Label text="称呼:" row="0" col="0"></Label>
             <TextField class="input input-border light" row="0" col="1"
-                       automationText="textField" [(ngModel)]="model.user"></TextField>
+                       automationText="textField" [(ngModel)]="model.user" reRequired></TextField>
             <Label text="邮件:" row="1" col="0"></Label>
-            <TextField class="input input-border light" row="1" col="1" [(ngModel)]="model.email"></TextField>
+            <TextField class="input input-border light" row="1" col="1" keyboardType="email" [(ngModel)]="model.email"></TextField>
             <Label text="问题:" row="2" col="0"></Label>
             <TextView verticalAlignment="center" horizontalAlignment="center"
                       class="input input-border" row="2" col="1" width="100%" height="80"

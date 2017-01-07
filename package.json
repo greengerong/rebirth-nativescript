@@ -8,7 +8,7 @@
     "dev:android": "tns livesync android --emulator --watch"
   },
   "nativescript": {
-    "id": "org.nativescript.rebirth.nativescript",
+    "id": "com.github.greengerong.rebirth.nativescript",
     "tns-ios": {
       "version": "2.4.0"
     },

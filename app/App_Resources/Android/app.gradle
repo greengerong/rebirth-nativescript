@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "org.nativescript.rebirth.nativescript"
+    applicationId = "com.github.greengerong.rebirth.nativescript"
     
     //override supported platforms
     // ndk {

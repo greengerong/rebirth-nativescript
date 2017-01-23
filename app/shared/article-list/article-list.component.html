@@ -1,43 +1,31 @@
 <GridLayout rows="*">
+    <ActivityIndicator [busy]="!article?.result" horizontalAlignment="center" verticalAlignment="center">
+    </ActivityIndicator>
     <PullToRefresh (refresh)="refresh($event)">
-        <ScrollView>
-            <ActivityIndicator
-                    [busy]="!article?.result"
-                    horizontalAlignment="center"
-                    verticalAlignment="center">
-            </ActivityIndicator>
-            <ListView [items]="article?.result" class="article-card-list" *ngIf="article?.result"
-                      (loadMoreItems)="loadMore($event)">
-                <template let-articleItem="item" let-$index="index">
-                    <CardView>
-                        <StackLayout class="article-card">
-                            <StackLayout class="list-group-item" orientation="horizontal"
-                                         horizontalAlignment="center">
-                                <Image src="~/assets/img/wolf2.png" class="article-author-image"></Image>
-                                <Label class="article-title primary-link" textWrap="true"
-                                       [text]="articleItem.title" (tap)="gotoPage(articleItem.url)"></Label>
-                            </StackLayout>
-                            <StackLayout *ngIf="articleItem.image" class="list-group-item" orientation="horizontal"
-                                         horizontalAlignment="center">
-                                <Image [src]="articleItem.image" class="article-overview-image"></Image>
-                            </StackLayout>
-                            <StackLayout class="list-group-item article-overview" orientation="horizontal">
-                                <Label textWrap="true" [text]="articleItem.overview"></Label>
-                            </StackLayout>
-                            <StackLayout class="list-group-item" orientation="horizontal">
-                                <GridLayout rows="auto" columns="* auto *" class="article-meta">
-                                    <Label class="primary-link pull-left" row="0" col="0"
-                                           [text]="articleItem.author"></Label>
-                                    <Label class="primary-link text-center" row="0" col="1"
-                                           [text]="'第' + ($index + 1) + '篇/共' + article?.total +'篇'"></Label>
-                                    <Label class="primary-link pull-right" row="0" col="2"
-                                           text="阅读原文" (tap)="gotoPage(articleItem.url)"></Label>
-                                </GridLayout>
-                            </StackLayout>
+        <ListView [items]="article?.result" class="article-card-list" *ngIf="article?.result" (loadMoreItems)="loadMore($event)">
+            <template let-articleItem="item" let-$index="index">
+                <CardView>
+                    <StackLayout class="article-card">
+                        <StackLayout class="list-group-item" orientation="horizontal" horizontalAlignment="center">
+                            <Image src="~/assets/img/wolf2.png" class="article-author-image"></Image>
+                            <Label class="article-title primary-link" textWrap="true" [text]="articleItem.title" (tap)="gotoPage(articleItem.url)"></Label>
                         </StackLayout>
-                    </CardView>
-                </template>
-            </ListView>
-        </ScrollView>
+                        <StackLayout *ngIf="articleItem.image" class="list-group-item" orientation="horizontal" horizontalAlignment="center">
+                            <Image [src]="articleItem.image" class="article-overview-image"></Image>
+                        </StackLayout>
+                        <StackLayout class="list-group-item article-overview" orientation="horizontal">
+                            <Label textWrap="true" [text]="articleItem.overview"></Label>
+                        </StackLayout>
+                        <StackLayout class="list-group-item" orientation="horizontal">
+                            <GridLayout rows="auto" columns="* auto *" class="article-meta">
+                                <Label class="primary-link pull-left" row="0" col="0" [text]="articleItem.author"></Label>
+                                <Label class="primary-link text-center" row="0" col="1" [text]="'第' + ($index + 1) + '篇/共' + article?.total +'篇'"></Label>
+                                <Label class="primary-link pull-right" row="0" col="2" text="阅读原文" (tap)="gotoPage(articleItem.url)"></Label>
+                            </GridLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </CardView>
+            </template>
+        </ListView>
     </PullToRefresh>
 </GridLayout>
